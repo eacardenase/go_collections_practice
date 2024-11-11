@@ -1,9 +1,62 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+type Product struct {
+	title     string
+	id        string
+	price     float64
+	createdAt time.Time
+}
 
 func main() {
-	fmt.Println("Collections Practice")
+	fmt.Println("Collections Practice\n")
+
+	hobbies := [3]string{"progamming", "learning", "reading"}
+
+	fmt.Println(hobbies)
+	fmt.Println(hobbies[0])
+	fmt.Println(hobbies[1:])
+
+	// featuredHobbies := hobbies[0:1]
+	// featuredHobbies = featuredHobbies[:2]
+
+	featuredHobbies := hobbies[:2]
+
+	fmt.Println(featuredHobbies)
+
+	goals := []string{"learn azure", "learn terraform", "learn ansible", "learn windows server", "master linux administration", "get an azure certification", "practice python", "practice go"}
+	goals[1] = "master terraform"
+	goals = append(goals, "learn aws basics")
+
+	fmt.Println(goals)
+
+	products := []Product{
+		{
+			"Xbox Series S",
+			"xss",
+			300,
+			time.Now(),
+		},
+		{
+			"Play Station 4",
+			"ps4",
+			300,
+			time.Now(),
+		},
+	}
+
+	products = append(products, Product{
+		"Nintendo Switch",
+		"ns",
+		200,
+		time.Now(),
+	})
+
+	fmt.Println(products)
 }
 
 // Time to practice what you learned!
